@@ -52,13 +52,13 @@ Wait for approval of the Pull Request and merge the change.
 Example curl command (entity described by subgraph):
 
 ```bash
-curl -X POST https://autopush.recon.datacommons.org/entity/resolve -d '{"entities":{"source_id":"newId/SantaClaraCountyId","sub_graph":{"nodes":{"newId/SantaClaraCountyId":{"pvs":{"wikidataId":{"typed_values":{"type":"TEXT","value":"Q110739"}}}}}}}}'
+curl -X POST https://api.datacommons.org/v1/recon/entity/resolve -d '{"entities":{"source_id":"newId/SantaClaraCountyId","sub_graph":{"nodes":{"newId/SantaClaraCountyId":{"pvs":{"wikidataId":{"typed_values":{"type":"TEXT","value":"Q110739"}}}}}}}}'
 ```
 
 Example curl command (entity described by IDs):
 
 ```bash
-curl -X POST https://autopush.recon.datacommons.org/entity/resolve -d '{"entities":{"source_id":"newId/SantaClaraCountyId","entity_ids":{"ids":{"prop":"geoId","val":"06085"}}}}'
+curl -X POST https://api.datacommons.org/v1/recon/entity/resolve -d '{"entities":{"source_id":"newId/SantaClaraCountyId","entity_ids":{"ids":{"prop":"geoId","val":"06085"}}}}'
 ```
 
 ### ResolveCoordinates
@@ -66,7 +66,7 @@ curl -X POST https://autopush.recon.datacommons.org/entity/resolve -d '{"entitie
 Example curl command: 
 
 ```bash
-curl -X POST https://autopush.recon.datacommons.org/coordinate/resolve -d '{"coordinates": [{"latitude":"37.42","longitude":"-122.08"},{"latitude":"32.41","longitude":"-102.11"}]}'
+curl -X POST https://api.datacommons.org/v1/recon/resolve/coordinate -d '{"coordinates": [{"latitude":"37.42","longitude":"-122.08"},{"latitude":"32.41","longitude":"-102.11"}]}'
 ```
 
 ### ResolveIds
@@ -74,7 +74,7 @@ curl -X POST https://autopush.recon.datacommons.org/coordinate/resolve -d '{"coo
 Example curl command: 
 
 ```bash
-curl -X POST https://autopush.recon.datacommons.org/id/resolve -d '{"in_prop":"wikidataId","out_prop":"dcid","ids":["Q110739","Q30"]}'
+curl -X POST https://api.datacommons.org/v1/recon/resolve/id -d '{"in_prop":"wikidataId","out_prop":"dcid","ids":["Q110739","Q30"]}'
 ```
 
 ## Generate Protobuf Libraries
